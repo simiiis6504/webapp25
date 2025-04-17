@@ -1,0 +1,72 @@
+body {margin:0;}
+
+.navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.navbar1 {
+  float: left;
+}
+
+.navbar1 a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar1 a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+
+.main {
+  margin-right: 10%;
+  margin-left: 10%;
+  position: absolute;
+  top: 9%;
+}
+.textkto {
+  float: left;
+  display: block;
+  width: 40%;
+  text-align: justify;
+}
+.mykto {
+  display: block;
+  float: right;
+  width: 50%;
+  margin-left: 5%;
+}
+.psim, .pfil, .pivo {
+  width: 20%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  display: block;
+  float: left;
+}
+.pivo {
+  margin-right: 100px;
+}
+.mykto img {
+  height: 100%;
+  width: 100%;
+}
+.tsim, .tfil, .tivo {
+  width: 20%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  display: block;
+  float: left;
+}

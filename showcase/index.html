@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IDK</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }*-*
+
+
+        body {
+            font-family: Roboto, sans-serif;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background: #121212;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #121212;
+            padding: 1rem;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 1rem;
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            font-size: 1.2rem;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            flex: 1;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem auto;
+            max-width: 300px;
+            background: #f9f9f9;
+            transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s, opacity 0.3s;
+        }
+
+        footer {
+            background: #ffffff;
+            color: #ffffff;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .progress-wrapper {
+            width: 5px;
+            height: 100vh; /* Full viewport height */
+            background: #ddd;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        #progress-container {
+            width: 100%;
+            height: 100%;
+            background: #ddd;
+            position: absolute;
+            bottom: 0;
+        }
+
+        #progress-bar {
+            width: 100%;
+            height: 0;
+            background: #121212;
+            transition: height 0.25s;
+        }
+
+        #credits {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 1.2rem;
+            background: #121212;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .lol {
+            background: #ffffff;
+            color: rgb(46, 46, 46);
+            padding: 2rem;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .rickroll {
+            color: inherit;  
+            font-weight: bold;  
+            cursor: pointer;  
+}
+
+        .rickroll:hover {
+            text-decoration: underline; 
+            color: #0073e6; 
+        }
+
+
+        .spacer {
+            height: 4rem; 
+        }
+
+        
+        @media (min-width: 768px) {
+            .container {
+                display: flex;
+                justify-content: space-around;
+                flex-wrap: wrap;
+            }
+
+            .card {
+                flex: 1;
+                margin: 1rem;
+                max-width: 45%;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .card {
+                max-width: 30%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1> *Random stuff* &#128511 </h1>
+    </header>
+
+    <nav>
+        <a href="#">Let's</a>
+        <a href="#">pretend</a>
+        <a href="#">this navbar</a>
+        <a href="#footer"><u>WORKS</a></u>
+    </nav>
+
+    <div class="container">
+        <div class="card" id="card1">
+            <h2>I zoom</h2>
+            <p>Trust me</p>
+        </div>
+
+        <div class="card" id="card2">
+            <h2>Wrong option</h2>
+            <p>(you get it, red)</p>
+        </div>
+
+        <div class="card" id="card3">
+            <h2>smh...</h2>
+        </div>
+    </div>
+
+    <div class="progress-wrapper">
+        <div id="progress-container">
+            <div id="progress-bar"></div>
+        </div>
+    </div>
+
+    <p class="lol">
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="rickroll">The end</a>
+    </p>
+    
+
+    <div class="spacer"></div>
+    
+    <footer id="footer"> <!-- Footer with an ID to target -->
+        <p>&copy; I'm hidden lol, 2025</p>
+    </footer>
+
+
+    <div id="credits">Credits: 1 Cr</div>
+
+    <script>
+        const card1 = document.getElementById('card1');
+        const card2 = document.getElementById('card2');
+        const card3 = document.getElementById('card3');
+
+        card1.addEventListener('mouseenter', () => {
+            card1.style.transform = 'scale(1.1)';
+            card1.style.boxShadow = '0 10px 15px rgba(0, 0, 0, 0.2)';
+        });
+
+        card1.addEventListener('mouseleave', () => {
+            card1.style.transform = 'scale(1)';
+            card1.style.boxShadow = 'none';
+        });
+
+        card2.addEventListener('mouseenter', () => {
+            card2.style.backgroundColor = '#ffcccb';
+            card2.style.transform = 'scale(1.1)';
+        });
+
+        card2.addEventListener('mouseleave', () => {
+            card2.style.backgroundColor = '#f9f9f9';
+            card2.style.transform = 'scale(1)';
+        });
+
+        let rotating = false;
+        card3.addEventListener('mouseenter', () => {
+            if (!rotating) {
+                rotating = true;
+                let angle = 0;
+                const interval = setInterval(() => {
+                    angle = angle === 10 ? -10 : 10;
+                    card3.style.transform = `rotate(${angle}deg)`;
+                }, 150);
+
+                card3.addEventListener('mouseleave', () => {
+                    clearInterval(interval);
+                    card3.style.transform = 'rotate(0deg)';
+                    rotating = false;
+                });
+            }
+        });
+
+        // prbar
+        const progressBar = document.getElementById('progress-bar');
+        const credits = document.getElementById('credits');
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / scrollHeight) * 100;
+            progressBar.style.height = `${scrollPercent}%`;
+
+            let creditValue = Math.ceil(scrollPercent / 23);
+            creditValue = Math.min(creditValue, 5); 
+            credits.textContent = `Credits: ${creditValue} Cr`;
+        });
+    </script>
+</body>
+</html>

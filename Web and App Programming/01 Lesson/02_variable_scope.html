@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="globalVarBox"></div>
+    <div id="calculatorBox">Here is a nice calculator</div>
+
+    <script>
+
+        let myGlobalVariable ="I am global "; // this is a global variable, because it is defined outside of any function
+        let mySecondGlobalVariable = "I am also global"; 
+
+        // document.body.innerHTML = myGlobalVariable + mySecondGlobalVariable; // we can reference the glot
+        // document.body.innerHTML = "I am a calculator"; // this will wipe out the earlier stuff
+
+        let globalVarBox = document.getElementById("globalVarBox");
+        globalVarBox.innerHTML = myGlobalVariable + mySecondGlobalVariable; // we can reference the global variables inside of a function
+
+        // document.body.innerHTML ="Let me add this small detail..."; // this will wipe out the calculator
+
+            // if u want to put something in the body real quick, you can use document.body.innerHTML = "whatever you want to put in here";
+            // if you want to do something more complicated and u don't want to risk erasing anything or so as it wipes out the previous content, you can use document.getElementById("theIdOfTheDiv")
+
+            //Now back to global vs local variables 
+
+        function exampleFunction() {
+            const myLocalVariable ="I am local."
+            console.log(myLocalVariable);
+        } //just logging the function, not calling it, just a set of instructions, it only exists inside of there, can't log it anywhere outside of this function
+
+        exampleFunction(); // this will actually call "I am local." to the console
+
+       // console.log('Trying to log a local variable from outside the scope' + myLocalVariable);  // trying to log it outside of the curly brackets of the function definition, this will log an error, because the variable is not defined outside of the function
+
+            // if we absolutely want to access the variable that is local inside a function, we have a couple of options
+
+            // option 1: we can return it from the function
+
+        function myFunctionThatGivessAccessToaLocalVariable() {
+            const myLocalVariable = "I am local variable from the MyFunctionThatGivessAccessToaLocalVariable function";
+            return myLocalVariable; //told the function to give us the variable back - we are sending the value of the locla variable back to the thing that called the function
+        }
+
+        let grabTheReturnValue = myFunctionThatGivessAccessToaLocalVariable(); // we are calling the function and storing the return value in a new variable
+        console.log('grabTheReturnValue', grabTheReturnValue); // this will log the value of the local variable
+
+        function myThirdFunctionForAScopingExample() {
+            let myScopedLocalVariable ="I will be made globally available"
+        }
+        
+    
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+    
+    <script>
+
+        // objects are a way to group related data together
+
+        // simple objet using object literal notation
+
+        /* const food = {
+
+            name: 'tomato', 
+            weightSuggestion: 150,
+            caloriesPer100g: 18,
+            sugarPer100g: 3.9,
+            proteinPer100g: 0.9,
+            fatPer100g: 0.2,
+            fiberPer100g: 1.2,
+            saltPer100g: 0.01,
+            vegan: true,
+            vegetarian: true,
+            carnivore: false,
+            glutenFree: true,
+            lactoseFree: true,
+        } */
+
+        // when we use an object literal like that, it becomes a bi weird when we need to make many of those kind of objects
+
+        // this is where constructor functions come in handy, we can create a function that will create objects for us
+
+        function Food (name, weightSuggestion, caloriesPer100g, sugarPer100g, proteinPer100g, fatPer100g, fiberPer100g, saltPer100g, vegan, vegetarian, carnivore, glutenFree, lactoseFree) {
+            this.name = name;
+            this.weightSuggestion = weightSuggestion;
+            this.caloriesPer100g = caloriesPer100g;
+            this.sugarPer100g = sugarPer100g;
+            this.proteinPer100g = proteinPer100g;
+            this.fatPer100g = fatPer100g;
+            this.fiberPer100g = fiberPer100g;
+            this.saltPer100g = saltPer100g;
+            this.vegan = vegan;
+            this.vegetarian = vegetarian;
+            this.carnivore = carnivore;
+            this.glutenFree = glutenFree;
+            this.lactoseFree = lactoseFree;
+        }
+
+        const tomato = new Food('tomato', 150, 18, 3.9, 0.9, 0.2, 1.2, 0.01, true, true, false, true, true);
+        const chicken = new Food('chicken', 150, 239, 0, 27, 14, 0, 0.1, false, false, true, true, false);
+        const egg = new Food('egg', 150, 155, 0.7, 13, 11, 0, 0.1, false, false, true, true, true);
+        const onion = new Food('onion', 150, 40, 4.2, 1.1, 0.1, 1.7, 0.01, true, true, false, true, true);
+        const butter = new Food('butter', 150, 717, 0.1, 0.9, 81, 0, 1.2, false, false, true, true, false);
+        const potato = new Food('potato', 150, 77, 0.8, 2.1, 0.1, 2.2, 0.01, true, true, false, true, true);
+
+        function Recipe (name, ingredients, instructions) {
+            this.name = name;
+            this.ingredients = ingredients;
+            this.instructions = instructions;
+                    // lets create a methot that will calculate the total calories of the recipe
+
+            this.calculateCalories = function() {
+                let totalCalories = 0; // we start the count with 0
+                for (let i = 0; i < this.ingredients.length; i++) { // for loop through the ingredients aray
+
+                    totalCalories += ingredients[i].caloriesPer100g * (this.ingredients[i].weightSuggestion / 100);
+
+                }
+                return totalCalories;
+        }
+        }
+
+        const spanishOmelette= new Recipe('Spanish Omelette', 
+        [egg, potato, onion, butter],
+         '1. Peel and chop the potatoes. 2. Fry the potatoes in a pan with butter until golden brown. 3. Add the chopped onion and fry for another 5 minutes. 4. Beat the eggs in a bowl and add the fried potatoes and onion. 5. Pour the mixture into the pan and cook until set.');
+   
+   </script>
+
+
+</body>
+</html>

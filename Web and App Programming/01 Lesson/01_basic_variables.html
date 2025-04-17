@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style></style>
+</head>
+<body>
+
+    <div class="myDiv">Every</div>
+    <div class="myDiv">div</div>
+    <div class="myDiv">contains</div>
+    <div class="myDiv">a different</div>
+    <div class="myDiv">word</div>
+
+    <script>
+
+        var x ="5"; // since the number 5 is stored as a string, it will be converted to a number when substracting from it, but not when adding to it
+
+        x-=2;
+
+        console.log(x); //will log 3
+
+        let myString ="Hello"; // when you use the plus operator, the string just gets longer (no number conversion)
+        let result = myString + " World";
+
+        console.log(result); //logs hellow world
+
+        // what are vars typically used for?
+
+        // answer: everything where you want to give a value a name, for example:
+
+        let score=0;
+        let gameTime=0;
+        let totalSum=0;
+
+
+        // constant variables
+
+        const myConstant=1;
+        
+       //  myConstant++;  // will log an error, because you can't change the value of a constant
+
+
+        console.log(myConstant); 
+
+        let myVariable = 1;
+        
+        myVariable++; // will work, because you can change the value of a variable
+
+        console.log(myVariable); // logs 2
+
+        //whenn you create a const inside of an event, its a new variable every time the event runs (so we aren ot reassigning an existing const)
+
+        const myDivs= document.querySelectorAll(".myDiv"); // just selects the divs with that class (as in CSS)
+        //const myDivs= document.querySelectorAll("div"); //selects all the divs 
+
+        myDivs.forEach(function(theDiv) { //does something for each of the selected divs
+
+            theDiv.addEventListener("click", function() {
+
+               if (this.style.fontSize == "5rem") { //if the font size is 5rem // double equalis compares
+                   this.style.fontSize = "1rem"; //change it to 1rem // single equal assigns
+               
+
+               }
+               
+               else {
+                this.style.color="red"; //changes the color of the text to red when clicked
+                this.style.fontSize="5rem"; //changes the font size to 2em when clicked
+
+                }
+            });
+
+                const myText = theDiv.textContent; //this const will be a new variable for each div, so we are NOT reassigning it even though it logs a different value on each iteration of the loop
+                console.log (myText); // gets the text content of the div
+
+        })
+
+         //myDivs is a global variable, which means it is not wiped out when some function has been executed, which means that trying to assign to it again creates an error
+
+        //myDivs = document.querySelectorAll('.somethingElse'); //throws an error
+
+        //a const CAN have its properties altered (but just not reassigned)
+
+        const myEmployeeObject = {
+            name: "John",
+            age: 30,
+            country:"USA"
+        }
+
+        //this would throw an error
+            /*myEmployeeObject = {
+                name:"Mary"
+                age:39
+                country: "UK" 
+            } */
+
+        myEmployeeObject.country="Finland"; //you can't mutated whole consts, but you can mutate their properties (like the country property here)
+        console.log (myEmployeeObject.country); //logs Finland
+
+         //being able to mutate the properties of the objects inside consts makes more sense when you think about selecting html elements: if you could not change any property of an element selected inside a const, that would kind of suck. But you can mutate the properties of an element inside of a const, you just cant reassign the entire const.
+
+        //if using consts feels difficult, you can always use a let instead. A let will not give you any trouble with reasignments.
+
+    </script>
+</body>
+</html>

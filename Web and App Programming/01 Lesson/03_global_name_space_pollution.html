@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="incrementButton">Increment</button>
+
+    <script>
+
+        var globalCounter = 0; // initialize a global variable
+
+        const myButton = document.querySelector("#incrementButton"); // select the button
+        myButton.addEventListener ("click", incrementCounter) // calling a named function when button i clicked
+
+        function incrementCounter() {
+            globalCounter++; // increment the global variable
+            console.log(globalCounter); // log the global variable
+            myButton.textContent = globalCounter; // this will change the text of the button to 10
+
+        }
+
+    </script>
+    <!-- This could be in a totaly different JS file somewhere, doing a totally different thing -->
+    <script>
+        var globalCounter = 10; //some programmer in some other file has just changed our variable value
+        myButton.textContent = globalCoiunter; // this will change the text of the button to 10
+    </script>
+
+    <script>
+        var i = 100;
+
+        for (i = 0; i < 10; i++) { //this loop will change the global variable called i. Note that if we declared it in the loop using let i then it would not change the global variable.
+            console.log('the value of i inside the loop is: ', i); // this wil log 0-9
+        }
+
+        console.log('the value of 1 outside the loop is: ', i); // this will log 10 because the loop changed the global variable, it ended at 10 and this log is after the loop
+    </script>
+</body>
+</html>

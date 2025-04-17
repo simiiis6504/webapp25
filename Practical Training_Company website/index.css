@@ -1,0 +1,437 @@
+body {margin:0;}
+
+@font-face {
+     font-family: SSP; src: url('f/SourceSansPro-Black.ttf'); 
+    } 
+@font-face {
+  font-family: SSP2; src: url('f/SourceSansPro-SemiBold.ttf');
+}
+@font-face {
+  font-family: SSP3; src: url('f/SourceSansPro-Bold.ttf');
+}
+@font-face {
+  font-family: Karma; src: url('f/Karma-Regular.ttf');
+}
+@font-face {
+  font-family: KarmaM; src: url('f/Karma-Medium.ttf');
+}
+
+
+/*menu*/
+.navbar {
+  position: fixed;
+  top: 0px;
+  margin: 0px;
+  list-style-type: none;
+  padding: 0;
+  overflow: hidden;
+  background-color: #ffffff;
+  width: 100%;
+  display: table;
+  text-align: center;
+  line-height: 70px;
+}
+
+
+.navbar .navbar1 {
+  display: inline-block;
+  float: none;
+}
+
+.navbar1 {
+  float: left;
+}
+
+.navbar1 a:hover:not(.active) {
+  color: black;
+}
+
+.navbar1 a {
+  font-size: 28px;
+  font-family: 'SSP';
+  display: block;
+  color: #666;
+  text-align: center;
+  padding: 14px 20px 0px 10px;
+  text-decoration: none;
+}
+
+.navbar1 .active {
+  color:black;
+
+}
+/* main div*/
+.main{
+  margin-top:89px ;
+  width: 100%;
+  height: 100%;
+}
+/*div1*/
+.logo{
+  display: block;
+  padding: 0px;
+  margin:0px;
+  width: 100%;
+  height: 911px;
+  background-color: rgb(255, 255, 255);
+
+}
+
+.logo img {
+  padding-top: 150px;
+  width:500px;
+  height:500px;
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+  
+  display: block;
+  text-align: center;
+
+}
+/*div2*/
+.div2 {
+  position: static;
+  margin-top: -61px;
+  padding: 0px; 
+  background-color: rgb(0, 0, 0);
+  width: 100%;
+  height: 750px;
+ 
+}
+/*venujeme sa.... text*/
+.ven{
+  display:block;
+  padding-top: 225px;
+  padding-left: 370px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  font-size: 60px;
+  font-family: 'SSP3';
+  font-weight: 500;
+  display: block;
+  color:rgb(255, 255, 255);
+  text-align: left;
+  text-decoration: none;
+  
+
+}
+
+
+.zvys{ 
+  color: #adadad;
+  margin-top: -225px;
+  display: block;
+  padding-left: 1200px;
+  font-size: 33px;
+  font-family: 'SSP2';
+  text-align: left;
+  text-decoration: none;
+
+}
+
+.zvystext {
+  padding-bottom: 5px;
+}
+
+/*div 3 - nasa praca*/
+
+.praca{
+  position: static;
+  margin-top: -61px;
+  padding: 0px; 
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  height: 750px;
+
+}
+
+/*galeria*/
+.main2 {
+  padding-top: 20px;
+  margin-right: 10%;
+  margin-left: 10%;
+  top: 9%;
+  height: 750px;
+  background-color: white;
+}
+
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.preview {
+  width: 100%;
+}
+
+.row {
+  margin-left: 10%;
+  margin-right: 10%;
+  width: 80%;
+  top: 10%;
+}
+
+.row.col {
+  padding: 20px 20px 20px 20px;
+}
+
+.col {
+  margin-bottom: 5%;
+  float: left;
+  width: 33.33%;
+  z-index: 100;
+}
+
+img.hover-shadow {
+  transition: 0.3s;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.5), 0 9px 20px 0 rgba(0, 0, 0, 1);
+}
+
+.content {
+  margin:10px 20px 0px 20px;
+  background-color: white;
+  padding: 10px;
+}
+
+/*texty ku galerii */
+.webstranky {
+ display: inline-block;
+ margin-top:150px;
+ margin-left: 403px;
+ font-size: 28px;
+ font-family: 'SSP';
+}
+
+.strih {
+  display: inline-block;
+  margin-top:150px;
+  margin-left: 185px;
+  font-size: 28px;
+  font-family: 'SSP';
+}
+
+.uprava {
+  display: inline-block;
+  margin-top:150px;
+  margin-left: 200px;
+  font-size: 28px;
+  font-family: 'SSP';
+}
+
+.loga {
+  display: inline-block;
+  margin-left: 265px;
+  font-size: 28px;
+  font-family: 'SSP';
+}
+
+.texty{
+  display: inline-block;
+  margin-left: 195px;
+  font-size: 28px;
+  font-family: 'SSP';
+}
+.tride {
+  display: inline-block;
+  margin-left: 175px;
+  font-size: 28px;
+  font-family: 'SSP';
+}
+/* o nas stranka */
+.main3 {
+  width: 100%;
+  margin-top: 300px;
+  padding-top: 20px;
+  top: 9%;
+  height: 530px;
+  background: rgb(17,17,17);
+  background: linear-gradient(90deg, rgba(17,17,17,1) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 70%, rgba(17,17,17,1) 100%);
+  color: #fff;
+}
+.nadpiskto{
+  display:block;
+  padding-left: 50px;
+  font-size: 30px;
+  font-family: 'SSP3';
+}
+.textkto {
+  padding-left: 50px;
+  float: left;
+  display: block;
+  width: 40%;
+  text-align: justify;
+  font-size: 20px;
+  font-family: 'SSP2';
+}
+.mykto {
+  display: block;
+  float: right;
+  width: 50%;
+  margin-left: 5%;
+}
+.psim, .pfil, .pivo {
+  width: 20%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  display: block;
+  float: left;
+}
+.pivo {
+  padding-right: 160px;
+}
+.mykto img {
+  margin-top: -150px;
+  height: 100%;
+  width: 100%;
+}
+.tsim, .tfil, .tivo {
+  font-family: Karma;
+  width: 17.5%;
+  margin-left: 2.5%;
+  margin-top: 10px;
+  display: block;
+  float: left;
+}
+.tsim p, .tfil p, .tivo p {
+  font-size: 15px;
+}
+
+.tsim {
+  padding-left: 15px;
+  padding-right: 48px;
+}
+.tfil {
+  padding-right: 48px;
+}
+
+/*cennik*/
+
+.cennik{
+  width: 100%;
+  margin-top: 0px;
+  padding-top: 20px;
+  top: 9%;
+  height: 700px;
+  background-color: #fff;
+  margin-bottom: 0px;
+}
+.col33{
+  width: 33%;
+  float: left;
+}
+.col33 h3{
+  font-size: 24px;
+  font-family: KarmaM; 
+}
+.col33 h4{
+  font-size: 18px;
+  font-family: Karma;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.col33 p{
+  font-size: 17px;
+  font-family: Karma;
+  margin: 15px 0px 15px 0px;
+}
+.col33 h2 {
+  font-family: 'SSP2';
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.row1 p, .row1 h2 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.row1:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.col33 h3{
+  background-color: #eee;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.sto{
+  font-family: 'SSP';
+  width: 100%;
+  font-size: 35px;
+}
+.innercennik{
+  width: 80%;
+  margin-left: 10%;
+}
+.sto h2, .col33{
+  text-align: center;
+}
+.konkon{
+  width: 100%;
+  height: 380px;
+  background-color: #191919;
+  margin-top: -21px;
+  padding-top: 50px;
+  color: white;
+}
+.kontab {
+  width: 50%;
+  margin-left: 10%;
+  height: 250px;
+}
+
+.konnadpis {
+  font-family: 'SSP2';
+  width: 100%;
+  font-size:20px;
+  color: white;
+
+}
+.konsview{
+  width: 30%;
+  position: relative;
+  float: right;
+  margin-top: -275px;
+}
+
+
+/*kontakty, prvy riadok, meno, priezvisko, e-mail porade*/
+.row1tab {
+ background-color: #131313; 
+ color: white;
+}
+.row1tab2 {
+  background-color: #131313;
+  color: white;
+ }
+ .row1tab3 {
+  background-color: #131313;
+  color: white;
+ }
+/*kontakty, druhy riadok, meno, priezvisko, e-mail porade*/
+
+/*kontakty, treti riadok, meno, priezvisko, e-mail porade*/
+
+  /*kontakty, stvrty riadok, meno, priezvisko, e-mail porade*/
+
+  
+/*footer*/
+.footer {
+  background-color: #191919;
+  width: 100%;
+  height: 50px;
+}
+.footxt{
+  text-align: center;
+  color: #fff;
+  flex: middle;
+  padding-top: 2px;
+}

@@ -1,0 +1,65 @@
+body {margin:0;}
+
+.navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.navbar1 {
+  float: left;
+}
+
+.navbar1 a {
+  display: block;
+  color: black;
+  font-size: 20px;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.navbar1 a:hover {
+  color: purple;
+}
+.main {
+  left: 10%;
+  width: 80%;
+  position: relative;
+  height: 1000px;
+}
+.pic {
+  display: block;
+  float: left;
+  margin-top: 9%;
+}
+.pic img {
+  width: 100%;
+  height: 100%;
+}
+.nadpis {
+  display: block;
+  float: right;
+  margin-top: 15%;
+  margin-right: 10%;
+}
+.nadpis h1 {
+  text-align: left;
+}
+.webt {
+  float: right;
+  display: block;
+  margin-right: 10%;
+  width: 10%;
+  text-align: justify;
+}
+.webt2 {
+  float: left;
+  display: block;
+  margin-top: 5%;
+  width: 50%;
+  text-align: justify;
+}

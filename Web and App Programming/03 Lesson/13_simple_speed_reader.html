@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speed Reader App</title>
+    <style>
+       
+        body {
+            min-height: 98vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+
+        }
+
+        textarea {
+            width: 40%;
+            height: 20vh;
+            font-size: 1.5rem;
+            font-family: Arial;
+            padding: 0.5rem;
+        }
+        #start {
+
+            padding: 0.5rem 2rem;
+            background-color: lightgreen;
+            font-size: 1rem;
+            border:  none;
+            font-family: Arial;
+            font-weight: bold;
+            cursor: pointer;
+        }   
+
+        #start:hover {
+            background-color: rgb(157, 245, 157);
+        }
+
+        #word {
+
+            font-size: 3rem;
+            font-family: Arial;
+            font-weight: bold;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <h1>Speed Reader App</h1>
+    <textarea id="userInput" placeholder="Enter your text here..."></textarea>
+    <button id="start"> Start! </button>
+    <div id="word"> Pase some text into the text area to get started </div>
+    
+    <script>
+
+        let userInput = document.getElementById('userInput');
+        let word = document.getElementById('word');
+        let start = document.getElementById('start');
+        let isOn = false;
+
+        
+        let timer;
+        let index = 0;
+
+        start.addEventListener('click', function() {
+            let words = userInput.value.split(' ');
+
+            if (!isOn) {
+            isOn = true;
+            start.textContent = 'Pause';
+            start.style.backgroundColor = 'red';
+            timer = setInterval(function() {
+                if (index < words.length) {
+                word.textContent = words[index];
+                index++;
+                } else {
+                clearInterval(timer);
+                isOn = false;
+                start.textContent = 'Start';
+                start.style.backgroundColor = 'lightgreen';
+                }
+            }, 500);
+            } 
+            else {
+            isOn = false;
+            clearInterval(timer);
+            start.textContent = 'Resume';
+            start.style.backgroundColor = 'lightgreen';
+            }
+        });
+
+    </script>
+</body>
+</html>

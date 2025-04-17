@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stratocaster</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #FD8D44, #F75C00);
+            font-family: 'Poppins', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .kontajner {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            max-width: 100%;
+            width: 100%;
+            padding: 20px;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        @keyframes dychanie {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.03);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .obrazok {
+            width: 100%;
+            max-width: 500px;
+            flex: 1;
+            animation: dychanie 4s ease-in-out infinite;
+        }
+
+        .obsah {
+            background-color: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            color: #fff;
+            border: none;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            flex: 2;
+            max-width: 80%;
+            width: 100%;
+            margin-right: 10%;
+            margin-bottom: auto;
+            margin-top: auto;
+        }
+
+        .nadpis h1 {
+            font-size: 3.5rem;
+            margin: 20px 0;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .obsah p {
+            line-height: 1.8;
+            font-size: 1.2rem;
+            color: #f1f1f1;
+        }
+
+        .tlacidlo-spat {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 12px 25px;
+            background-color: #9B440C;
+            color: white;
+            text-decoration: none;
+            font-size: 1.3rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .tlacidlo-spat:hover {
+            background-color: #F75C00;
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .kontajner {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .obrazok {
+                max-width: 80%;
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .obsah {
+                flex: 1 1 80%;
+                margin-top: 0;
+                max-width: 100%;
+                margin-right: 0;
+            }
+
+            .nadpis h1 {
+                font-size: 2.8rem;
+            }
+
+            .obsah p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nadpis h1 {
+                font-size: 2.2rem;
+            }
+
+            .obsah p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <a href="index.html" class="tlacidlo-spat">Späť</a>
+
+    <div class="kontajner">
+        <img src="images/stratoc.png" alt="Stratocaster Gitara" class="obrazok">
+        <div class="obsah">
+            <div class="nadpis">
+                <h1>Stratocaster</h1>
+            </div>
+            <p>Stratocaster je typ elektrickej gitary, ktorý navrhol Leo Fender na začiatku 50. rokov 20. storočia a ktorý sa vyrába dodnes. Spoločne s Gibson Les Paul, Fender Telecaster patrí k najtypickejším modelom gitár.
+              <br><br>
+            V roku 1954, kedy bol uvedený na trh pod menom Stratocaster (názov bol odvodený od slova stratosféra), predstavoval revolučný hudobný nástroj. Obsahoval niekoľko dovtedy nevýdaných konštrukčných riešení. Už samotný tvar tela vzbudzoval u vtedajších hudobníkov veľký obdiv, záujem, ale aj pohoršenie či nedôveru. Novinkou bol nový typ tremola nazývaný vibrato, ktorý pri častom a hrubšom používaní držal ladenie nástroja lepšie ako vtedajšie bežné tremolá (napr. Bigsby). Tremolo sa skladá zo 6 kamienkov umožňujúcich ľahké nastavenie gitary, vibračky, kovového bloku a pružín.</p>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        body 
+         {
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            cursor: url('target.png'), auto;
+
+        }
+
+        .enemy {
+            font-size: 5vh;
+            cursor: url('target.png'), auto;
+            margin: 0;
+            user-select: none;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="enemy">&#129324;</div>
+    <div class="enemy">&#129324;</div>
+    <div class="enemy">&#129324;</div>
+    <div class="enemy">&#129324;</div>
+    <div class="enemy">&#129324;</div>
+    
+</body>
+
+<script>
+// local variable makes each enemy have separate health basically - use of local vs global variables example
+        let theEnemies = document.querySelectorAll(".enemy");
+    
+        theEnemies.forEach(enemy => { //the same as doing function(enemy) {}
+            
+            enemy.health = 100; //adding a property to the enemy object
+            enemy.addEventListener("click", ()=> {
+                enemy.health -= 10;
+    
+                if (enemy.health <= 1) {
+                    enemy.innerHTML = "💀";
+                }
+    
+                console.log(enemy.health);
+                
+            });
+        });
+    </script>
+
+</script>
+</html>

@@ -1,0 +1,112 @@
+body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5vw;
+    font-family: 'NotoSans', sans-serif;
+  }
+
+  header {
+    grid-column: span 2;
+  }
+
+  body > div {
+    border: 1px solid black;
+    padding: 2vw;
+  }
+
+  button {
+    background-color: #4caf50; /* Green */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #45a049; /* Darker green */
+  }
+
+  .ingredient img {
+    width: 7vw;
+    margin-right: 1vw;
+  }
+  .ingredient {
+    display: flex;
+    align-items: center;
+  }
+
+  @font-face {
+    font-family: "NotoSans";
+    src: url("fonts/NotoSans-Regular.ttf") format("truetype");
+  }
+
+  .recipeHeading {
+    background-color: #d1ebd2; /* LightGreen from same hue*/
+    padding: 0.5rem;
+}
+
+/* Container for all recipes */
+#recipesContainer {
+  margin: 20px auto;
+  max-width: 600px;
+  padding: 20px;
+  background: #fafafa;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* New recipe input section */
+.new-recipe {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  margin-bottom: 24px;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+}
+
+/* Inputs and textarea */
+.new-recipe input[type="text"],
+.new-recipe textarea {
+  padding: 10px 14px;
+  border: 1px solid #cbd5e0;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.new-recipe input[type="text"]:focus,
+.new-recipe textarea:focus {
+  outline: none;
+  border-color: #31ce3c;
+  box-shadow: 0 0 0 2px rgba(49, 130, 206, 0.2);
+}
+
+/* Button */
+.add-recipe-button {
+  padding: 10px 16px;
+  background-color: #31ce3c;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+.add-recipe-button:hover {
+  background-color: #31ce3c;
+}
+
+.add-recipe-button:active {
+  background-color: #31ce3c;
+}

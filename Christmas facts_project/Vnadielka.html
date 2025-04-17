@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vianočné Zaujímavosti</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.0/dist/vanilla-tilt.min.js"></script> 
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+    <style>
+        /* Global Styling */
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #ff4c4c, #8b0000);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            min-height: 100vh; /* Full height */
+        }
+
+        /* Header */
+        h1 {
+            text-align: center;
+            font-family: 'Great Vibes', cursive;
+            font-size: 60px;
+            text-shadow: 0px 5px 15px #ff0000;
+            margin-top: 30px;
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 20px #ff4d4d, 0 0 30px #ff0000;
+            }
+            to {
+                text-shadow: 0 0 30px #ff8080, 0 0 40px #ff1a1a;
+            }
+        }
+
+        /* Subheader */
+        h2 {
+            font-size: 30px;
+            margin: 20px;
+            text-align: center;
+            font-weight: 400;
+        }
+
+        /* Grid Layout for Facts */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Three columns */
+            gap: 20px;
+            max-width: 1100px;
+            margin: 20px auto;
+            padding: 20px;
+            flex-grow: 1;
+        }
+
+        .fact {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(5px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Ensures space between image and text */
+            height: 350px; /* Set a fixed height for all cards */
+            
+        }
+
+        .fact:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 25px rgba(255, 255, 255, 0.5);
+            cursor:default;
+        }
+
+        .fact img {
+            width: 100%;
+            height: auto;
+            max-height: 200px; /* Set a max height for the image */
+            object-fit: contain; /* Ensure the image fits within the container without distortion */
+            margin-bottom: 10px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .fact p {
+            font-size: 18px;
+            line-height: 1.5;
+            margin-top: 10px;
+            font-weight: 300;
+        }
+
+        /* Button */
+        .odkaz a {
+            display: inline-block;
+            margin: 30px auto;
+            text-align: center;
+            padding: 10px 20px;
+            background-color: #ff4d4d;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 25px;
+            box-shadow: 0 4px 15px rgba(255, 77, 77, 0.6);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .odkaz a:hover {
+            background-color: #ff1a1a;
+            transform: translateY(-5px);
+        }
+
+        /* Snowflakes */
+        .snowflake {
+            position: fixed;
+            top: -10px;
+            color: #fff;
+            font-size: 1.5em;
+            user-select: none;
+            pointer-events: none;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 50px;
+            }
+
+            .fact p {
+                font-size: 16px;
+            }
+
+            .grid {
+                grid-template-columns: 1fr; /* One column for small screens */
+            }
+        }
+
+        .fact {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+    }
+    
+    .fact img {
+        transition: transform 0.5s ease;
+    }
+    
+    .fact:hover img {
+        transform: scale(1.1);
+    }
+    
+    .odkaz a {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .odkaz a span {
+        animation: particle 1s linear forwards;
+    }
+    
+    @keyframes particle {
+        0% {
+            transform: scale(1);
+            opacity: 1;
+        }
+        100% {
+            transform: scale(20);
+            opacity: 0;
+        }
+    }
+`;
+    </style>
+</head>
+
+<body>
+
+    <h1>Vianočné Zaujímavosti</h1>
+
+    <!-- Two-Column Grid for Facts -->
+    <div class="grid">
+        <!-- Fact 1 -->
+        <div class="fact">
+            <img src="santa2.gif" alt="Santa Claus">
+            <p>🎅 Santa Claus vznikol na základe svätého Mikuláša, ktorý rozdával dary chudobným. Coca-Cola mu dala dnešnú podobu v 30. rokoch.</p>
+        </div>
+
+        <!-- Fact 2 -->
+        <div class="fact">
+            <img src="tree.png" alt="Christmas Tree">
+            <p>🎄 Najvyšší vianočný stromček meral 85 metrov a bol vyzdobený 3 miliónmi sviečok v Rio de Janeiro.</p>
+        </div>
+
+        <!-- Fact 3 -->
+        <div class="fact">
+            <img src="carp.png" alt="Fried Carp">
+            <p>🐟 Vyprážaný kapor so zemiakovým šalátom sa stal tradíciou až v 19. storočí vďaka Magdalene Dobromile Rettigovej.</p>
+        </div>
+
+        <!-- Fact 4 -->
+        <div class="fact">
+            <img src="snowflake.png" alt="Snowflake">
+            <p>❄️ Predstava bielych Vianoc pochádza z malej doby ľadovej medzi 16. a 19. storočím.</p>
+        </div>
+
+        <!-- Fact 5 -->
+        <div class="fact">
+            <img src="gift.png" alt="Christmas Gift">
+            <p>🎁 Vianočné darčeky sú staré viac ako 1000 rokov! Prvé vianočné darčeky sa darovali už v 4. storočí. Vtedajší darcovia ich nechávali pod vianočným stromčekom.</p>
+        </div>
+
+        <!-- Fact 6 -->
+        <div class="fact">
+            <img src="silentnight.png" alt="Silent Night">
+            <p>🎶 Vianočný film *Tichý večer* vznikol v roku 1818. Pieseň, ktorá je dnes celosvetovo obľúbená, bola pôvodne napísaná pre katolícku bohoslužbu v Rakúsku.</p>
+        </div>
+    </div>
+
+    <!-- Link -->
+    <div class="odkaz">
+        <a href="https://www.sperky-a-diamanty.sk/info/najkrajsie-sviatky-roka" target="_blank">Prečítajte si viac!</a>
+    </div>
+
+    <!-- Snowflakes (JavaScript) -->
+    <script>
+       // Enhanced Snowfall Effect
+const snowflakes = "❅❆❄";
+        for (let i = 0; i < 50; i++) {
+            const snowflake = document.createElement("div");
+            snowflake.className = "snowflake";
+            snowflake.style.left = Math.random() * window.innerWidth + "px";
+            snowflake.style.animationDuration = Math.random() * 3 + 2 + "s";
+            snowflake.style.opacity = Math.random();
+            snowflake.style.fontSize = Math.random() * 10 + 10 + "px";
+            snowflake.innerText = snowflakes[Math.floor(Math.random() * snowflakes.length)];
+            document.body.appendChild(snowflake);
+        }
+
+// Create snowflakes with interval
+setInterval(() => new Snowflake(), 300);
+
+// Animate facts cards on scroll
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: "0px"
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('.fact').forEach(fact => {
+    fact.style.opacity = "0";
+    fact.style.transform = "translateY(50px)";
+    fact.style.transition = "all 0.6s ease-out";
+    observer.observe(fact);
+});
+
+// Add 3D tilt effect to cards
+VanillaTilt.init(document.querySelectorAll(".fact"), {
+    max: 25,
+    speed: 400,
+    glare: true,
+    "max-glare": 0.5
+});
+
+// Interactive header
+const header = document.querySelector('h1');
+header.innerHTML = header.textContent.split('').map(letter => 
+    `<span style="display: inline-block">${letter}</span>`
+).join('');
+
+// Animate header letters on hover
+const letters = header.querySelectorAll('span');
+letters.forEach(letter => {
+    letter.addEventListener('mouseover', () => {
+        gsap.to(letter, {
+            y: -20,
+            scale: 1.5,
+            color: '#ffeb3b',
+            duration: 0.3,
+            yoyo: true,
+            repeat: 1
+        });
+    });
+});
+
+const styleSheet = document.createElement("style");
+styleSheet.innerText = newStyles;
+document.head.appendChild(styleSheet);
+    </script>
+
+</body>
+</html>

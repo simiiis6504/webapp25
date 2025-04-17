@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kruch - Tvorba Webstránok a Viac</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            width: 100%;
+            padding: 20px 50px;
+            background: transparent;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            transition: background 0.3s;
+        }
+
+        .navbar.scrolled {
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .navbar.scrolled a {
+            color: #333;
+        }
+
+        .navbar a:hover {
+            color: #ff4d4d;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: url('p/logo.png') no-repeat center center/contain, #191919;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 100px 50px;
+        }
+
+        .services, .about, .pricing, .contact {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        /* Cards */
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 300px;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card img {
+            max-width: 100%; /* Ensure images fit within the card */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 10px; /* Optional: round the corners of the images */
+        }
+
+        /* Contact Form */
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .contact input, .contact textarea {
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            width: 100%;
+        }
+
+        .contact button {
+            padding: 15px;
+            background-color: #ff4d4d;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .contact button:hover {
+            background-color: #e60000;
+        }
+
+        /* Team Member Styles */
+        .team {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .team-member {
+            text-align: center;
+            margin: 20px;
+            flex: 1 1 30%;
+            max-width: 200px;
+        }
+
+        .team-member img {
+            border-radius: 50%;
+            width: 300px;
+            height: 330px;
+            margin-bottom: 10px;
+            margin-left: -50px;
+
+        }
+
+        .team-member h3 {
+            margin-top: 10px; /* Ensure there's space above the name */
+        }
+
+        .team-member p {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div><a href="#home">Kruch</a></div>
+        <ul>
+            <li><a href="#services">Služby</a></li>
+            <li><a href="#about">O nás</a></li>
+            <li><a href="#pricing">Cenník</a></li>
+            <li><a href="#contact">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero" id="home">
+
+    </header>
+
+    <section class="services" id="services">
+        <h2>Naše Služby</h2>
+        <div class="card-container">
+            <div class="card">
+                <img src="p/tvorweb2.png" alt="Tvorba webstránok">
+                <h3>Tvorba webstránok</h3>
+                <p>Vytvárame moderné a responzívne webové stránky, ktoré zaujmú vašich návštevníkov.</p>
+            </div>
+            <div class="card">
+                <img src="p/strihvidei1.png" alt="Strih videí">
+                <h3>Strih videí</h3>
+                <p>Profesionálny strih videí pre vaše projekty a udalosti.</p>
+            </div>
+            <div class="card">
+                <img src="p/upravafotiek.png" alt="Úprava fotiek">
+                <h3>Úprava fotiek</h3>
+                <p>Vylepšujeme vaše fotografie pre dokonalý vzhľad.</p>
+            </div>
+            <div class="card">
+                <img src="p/tvorlogo.png" alt="Tvorba loga">
+                <h3>Tvorba loga</h3>
+                <p>Navrhujeme jedinečné logá, ktoré reprezentujú vašu značku.</p>
+            </div>
+            <div class="card">
+                <img src="p/efefef.png" alt="Textová reklama">
+                <h3>Textová reklama</h3>
+                <p>Vytvárame pútavé texty pre vašu reklamu a marketing.</p>
+            </div>
+            <div class="card">
+                <img src="p/3d.png" alt="3D modelovanie">
+                <h3>3D modelovanie</h3>
+                <p>Vytvárame 3D modely pre technické a umelecké projekty.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <h2>Kto sme?</h2>
+        <p>Sme moderná spoločnosť, ktorá používa najnovšie technológie a postupy. Pohybujeme sa v mnohých odvetviach ako: Tvorba web stránok, 3D modelovanie, grafický design a tvorba reklamných videí. Sme mladí, talentovaní a kreatívni ľudia, otvorení novým možnostiam.</p>
+        <div class="team">
+            <div class="team-member">
+                <img src="p/simona.png" alt="Simona">
+                <h3>Simona</h3>
+                <p>Spoluzakladateľka a vedúca firmy Kruch.</p>
+            </div>
+            <div class="team-member">
+                <img src="p/filip.png" alt="Filip">
+                <h3>Filip</h3>
+                <p>Spoluzakladateľ firmy Kruch.</p>
+            </div>
+            <div class="team-member">
+                <img src="p/ivan.png" alt="Ivan">
+                <h3>Ivan</h3>
+                <p>Spoluzakladateľ firmy Kruch.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing" id="pricing">
+        <h2>Cenník</h2>
+        <div class="card-container">
+            <div class="card">
+                <h3>Tvorba webstránky</h3>
+                <p>--,--€/h</p>
+            </div>
+            <div class="card">
+                <h3>3D modelovanie</h3>
+                <p>--,--€/h</p>
+            </div>
+            <div class="card">
+                <h3>Úprava fotografií</h3>
+                <p>--,--€/h</p>
+            </div>
+            <div class="card">
+                <h3>Tvorba loga</h3>
+                <p>--,--€/h</p>
+            </div>
+            <div class="card">
+                <h3>Strih videí</h3>
+                <p>--,--€/h</p>
+            </div>
+            <div class="card">
+                <h3>Textová reklama</h3>
+                <p>--,--€/h</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2>Kontaktujte nás</h2>
+        <form>
+            <input type="text" placeholder="Meno" required>
+            <input type="email" placeholder="E-mail" required>
+            <textarea placeholder="Správa" rows="4" required></textarea>
+            <button type="submit">Odoslať</button>
+        </form>
+    </section>
+
+    <script>
+        window.addEventListener('scroll', function () {
+            document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        document.querySelectorAll('.navbar a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+    </script>
+
+</body>
+</html>
