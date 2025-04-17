@@ -72,10 +72,6 @@ padding: 0.5rem;
   flex-direction: column;
 }
 
-#ingredientDropArea h3 {
-  color: #ccc;
-  text-align: center;
-}
 
 @keyframes blink {
   0% { opacity: 1; }
@@ -85,6 +81,8 @@ padding: 0.5rem;
 
 .blink {
   animation: blink 3s infinite;
+  color: #ccc;
+  text-align: center;
 }
 
 .modal {

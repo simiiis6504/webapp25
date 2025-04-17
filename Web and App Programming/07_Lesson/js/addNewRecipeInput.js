@@ -32,11 +32,12 @@ function addNewRecipeInputs(){
     e.preventDefault(); //prevent the default behavior of the browser. This is necessary to allow dropping of elements
 
     const ingredientHTML = e.dataTransfer.getData("text/html"); //get the html of the dragged element
-    const clone = document.createElement("div"); //create a new div element
-    clone.innerHTML = ingredientHTML; //set the inner html of the div to the html of the dragged element
-    clone.classList.add("ingredient"); //add a class to the div for styling
-    this.appendChild(clone); //append the div to the ingredient drop area
-    const ingredientName = clone.querySelector('h3').innerText; //get the name of the ingredient from the h3 element in order to show it in the modal
+    const tempDiv = document.createElement("div"); //create a new div element
+    tempDiv.innerHTML = ingredientHTML; //set the inner html of the div to the html of the dragged element
+    const ingredientElement = tempDiv.querySelector(".ingredient"); //get the ingredient element from the div
+    this.appendChild(ingredientElement); //append the ingredient element to the ingredient drop area
+    
+    const ingredientName = ingredientElement.querySelector('h3')?.innerText || "Unknown Ingredient"; //get the name of the ingredient from the h3 element in order to show it in the modal
 
     const modal = document.createElement("div"); //create a new div element for the modal
     modal.classList.add("modal"); //add a class to the div for styling
@@ -44,12 +45,30 @@ function addNewRecipeInputs(){
     <h2>Add ingredient</h2>
       <p>Enter the quantity of ${ingredientName}</p>
       <input type="number" id="ingredientQuantityInput" placeholder="Enter the quantity" required>
-
-      <button>Add</button>
-
-
+      <select id="unitSelect">
+        <option value="g">g</option>
+        <option value="kg">kg</option>
+        <option value="ml">ml</option>
+        <option value="dl">dl</option>
+        <option value="l">l</option>
+        <option value="tsp">tsp</option>
+        <option value="tbsp">tbsp</option>
+        <option value="cup">cup</option>
+        <option value="pc">pc</option>
+      </select>
+      <button id="addIngredientButton">Add</button>
 
     `;
+
+    modal.querySelector("#addIngredientButton").addEventListener("click", function () {
+      const quantity = modal.querySelector("#ingredientQuantityInput").value; //get the value of the input element in the modal
+      const unit = modal.querySelector("#unitSelect").value; //get the value of the select element in the modal
+
+      const quantityElement = document.createElement("p"); //create a new p element for the quantity
+      quantityElement.innerHTML = ` <span class="quantity">${quantity}</span> <span class="unit">${unit}</span>`; //set the inner html of the p element to the quantity and unit
+      ingredientElement.appendChild(quantityElement); //append the p element to the ingredient element
+      modal.remove(); //remove the modal
+    });
 
     document.body.appendChild(modal); //append the div to the body
   }); //closes drop
